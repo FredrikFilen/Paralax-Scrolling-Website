@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Paralax Scrolling Website | Vanilla Javascript</title>
+    <link rel="stylesheet" type="text/css" href="style.css"
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Logo</a>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <section>
+      <img src="resources/stars.png" id="stars" />
+      <img src="resources/moon.png" id="moon" />
+      <img src="resources/mountains_behind.png" id="mountains_behind" />
+      <h2 id="text">Moon Light</h2>
+      <a href="#sec" id="btn">Explore</a>
+      <img src="resources/mountains_front.png" id="mountains_front" />
+    </section>
+    <div class="sec" id="sec">
+      <h2>Paralax Scrolling Effects</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit eos ab
+        sunt saepe fugit voluptas eius, ad inventore blanditiis! Perferendis
+        minus esse obcaecati autem magnam qui itaque nemo rem neque?. Lorem
+        ipsum dolor sit amet consectetur, adipisicing elit. Eaque nisi officiis
+        amet fuga error hic perferendis doloremque culpa? Quaerat perspiciatis
+        at voluptates temporibus delectus et? At perspiciatis tempora facere
+        ipsum!. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Aliquam perspiciatis officiis incidunt asperiores expedita optio? Quae
+        incidunt placeat voluptatum tenetur quo? Nisi deleniti corrupti dolore
+        maiores amet sunt numquam! Sapiente.<br /><br />Lorem ipsum dolor sit
+        amet consectetur, adipisicing elit. Impedit eos ab sunt saepe fugit
+        voluptas eius, ad inventore blanditiis! Perferendis minus esse obcaecati
+        autem magnam qui itaque nemo rem neque?. Lorem ipsum dolor sit amet
+        consectetur, adipisicing elit. Eaque nisi officiis amet fuga error hic
+        perferendis doloremque culpa? Quaerat perspiciatis at voluptates
+        temporibus delectus et? At perspiciatis tempora facere ipsum!. Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Aliquam perspiciatis
+        officiis incidunt asperiores expedita optio? Quae incidunt placeat
+        voluptatum tenetur quo? Nisi deleniti corrupti dolore maiores amet sunt
+        numquam! Sapiente.<br /><br />Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Impedit eos ab sunt saepe fugit voluptas eius, ad
+        inventore blanditiis! Perferendis minus esse obcaecati autem magnam qui
+        itaque nemo rem neque?. Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Eaque nisi officiis amet fuga error hic perferendis
+        doloremque culpa? Quaerat perspiciatis at voluptates temporibus delectus
+        et? At perspiciatis tempora facere ipsum!. Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Aliquam perspiciatis officiis incidunt
+        asperiores expedita optio? Quae incidunt placeat voluptatum tenetur quo?
+        Nisi deleniti corrupti dolore maiores amet sunt numquam! Sapiente.
+      </p>
+    </div>
+
+    <script>
+      let stars = document.getElementById("stars");
+      let moon = document.getElementById("moon");
+      let mountains_behind = document.getElementById("mountains_behind");
+      let mountains_front = document.getElementById("mountains_front");
+      let text = document.getElementById("text");
+      let btn = document.getElementById("btn");
+      let header = document.querySelector("header");
+
+      window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        stars.style.left = value * 0.25 + "px";
+        moon.style.top = value * 1.05 + "px";
+        mountains_behind.style.top = value * 0.5 + "px";
+        mountains_front.style.top = value * 0 + "px";
+        text.style.marginRight = value * 4 + "px";
+        text.style.marginTop = value * 1.5 + "px";
+        btn.style.marginTop = value * 4 + "px";
+        header.style.top = value * 0.5 + "px";
+      });
+    </script>
+  </body>
+</html>
